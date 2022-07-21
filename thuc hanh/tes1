@@ -1,0 +1,14 @@
+const js = { language: "loosely type", label: "difficult" };
+
+const edu = { ...js, level: "PhD" };
+
+const newbie = edu;
+
+delete edu.language;
+
+console.log(Object.keys(newbie).length);
+
+ A: 2;
+ B: 3;
+ C: 4;
+ D: 5;
