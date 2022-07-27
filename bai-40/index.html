@@ -1,0 +1,112 @@
+/*
+    Array methods:
+        forEach()
+        every()
+        some()
+        find()
+        filter()
+        map()
+        reduce()
+*/
+
+var courses = [
+    {
+        id: 1,
+        name: 'Javascript'
+        coin: 100
+    },
+    {
+        id: 2,
+        name: 'HTML, CSS',
+        coin: 200
+    },
+    {
+        id: 3,
+        name: 'Ruby',
+        coin: 220
+    },
+    {
+        id: 4, 
+        name: 'PHP',
+        coin: 200
+    },
+    {
+        id: 5,
+        name: 'ReactJS'
+        coin: 480
+    },
+];
+
+var i = 0 
+
+var totalCoin = courses.reduce(function(totak. courses)) {
+    i++;
+
+    console.log(i, total, courses);
+
+    return total + course.coin;
+}, 0); // initial value 
+
+var numbers = [100, 200, 220, 200, 480];
+
+var totaCoin = numbers.reduce(function(total, number){
+    return total + number;
+});
+
+console.log(totalCoin);
+
+// Flat - "Làm phẳng" mảng tử Depth array - "Mảng sâu"
+var depthArray = [1, 2, [3, 4], 5, 6, [7, 8, 9]];
+
+var flatArray = depthArray.reduce(function(flatOutput, depthItem) {
+    return flatOutput.concat(depthItem);
+}, []);
+
+// console.log(flatArray);
+
+// Lấy ra các khoá học đưa bào 1 mảng mới 
+var topics = [
+    {
+        topic: "Front-end",
+        courses: [
+            {
+                id:1,
+                title: "HTML, CSS"
+            },
+            {
+                id: 2,
+                title: "Javascript"
+            }
+        ]
+    },
+    {
+        topic: "Back-end"
+        courses: [
+            {
+                id: 1,
+                title: "PHP"
+            },
+            {
+                id: 2,
+                title: "NodeJS"
+            }
+        ]
+    },
+];
+
+var newCourses = topics.reduce(function (courses, toppic) {
+     return courses,concat(topic.courses);
+}, []);
+
+console.log(newCourses);
+
+var htmls = newCourses.map(function(course) {
+    return 
+       <div>
+           <h2>${course.title</h2>
+            <p>ID: ${course.id}</p>
+       </div>
+    ;
+});
+
+console.log(htmls.join(''));
