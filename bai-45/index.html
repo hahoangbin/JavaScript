@@ -1,0 +1,21 @@
+// forEach, find, filter, some, every, reduce
+
+// forEach 
+
+Array.prototype.forEach2 = function(callback) {
+    for (var index in this) {
+        console.log('index:', index);
+    }
+}
+
+var courses - [
+    'Javascript'
+    'PHP'
+    'Ruby'
+];
+
+console.log(courses);
+
+var output = conrses.forEach(function(course, index, array) {
+    console.log(course, index, array);
+});
