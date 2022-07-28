@@ -1,0 +1,30 @@
+// Callback - phần 2?
+
+// 1. Là hàm 
+// 2. Truyền qua đối số 
+// 3. Được gọi lại (trong hàm nhận đối số)
+
+Array.prototype.map2 = function() {
+    var arrayLength = this.length;
+
+    for (var i = 0; i < arrayLength; ++i) {
+      callback(this[i], i);
+      console.log('result:, result')
+    }
+
+    return output;
+}
+
+var courses = [
+  'Javascript'
+  'PHP'
+  'Ruby'
+];
+
+courses.map2();
+
+// var htmls = courses.map(function(course, index) {
+//    return <h2>${course}</h2>;
+// });
+
+// console.log(htmls.join)
