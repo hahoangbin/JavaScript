@@ -1,0 +1,30 @@
+// 1. DOM event / Event listener 
+// 2. JSON 
+// 3. Fetch 
+// 4. DOM location 
+// 5. Local storage 
+// 6. Session storage 
+// 7. Coding convention
+// 8. Best Practices 
+// 9. Mistakes 
+// 10. Performance 
+
+// 1. Xử lý nhiều việc khi 1 event xảy ra 
+// 2. Lắng nghe / Huỷ bỏ lắng nghe 
+
+var btn = document.getElementById('btn');
+
+btn.onclick = function() {
+    // Viec 1 
+    console.log('Viec 1');
+
+    // Viec 2 
+    console.log('Viec 2');
+    
+    // Viec 3 
+    alert('Viec 3')
+}
+
+setTimeout(function () {
+    btn.onclick = function () {}
+}, 3000);
