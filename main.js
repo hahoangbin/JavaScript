@@ -60,6 +60,7 @@ function Validator() {
                     // Trường hợp submit với hành vi mặc định 
                     else {
                         formElement.submit()
+
                 }
             }
         }
@@ -132,7 +133,7 @@ Validator.isConfirmed = function (selector, getCofirmValue, messae) {
     return {
         selector: selector,
         test: function (value) {
-            return value === getCofirmValue() ? undefined : messae || 'Giá trị nhập vào không chính xác';
+            return value === getConfirmValue() ? undefined : messae || 'Giá trị nhập vào không chính xác';
         }
     }
 }
