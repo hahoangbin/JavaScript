@@ -24,4 +24,4 @@ const Course = function(name, price) {
 
 const jsCourse = new Course('Javascript', 1000);
 
-console.log(jsCourse);
+console.log(jsCourse);;
