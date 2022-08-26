@@ -3,7 +3,7 @@
 //    -Async --> ok
 //    -Nỗi đau
 //    -Lý thuyết, cách hoạt động
-//    -Thực hành,ví dụ
+//    -Thực hành,ví dụa
 
 setTimeout(function() {
     console.log(1); //viec1
