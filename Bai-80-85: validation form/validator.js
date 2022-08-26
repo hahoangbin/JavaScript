@@ -35,7 +35,7 @@ function Validator() {
                 inputElement.oninput = function () {
                     var errorElement = inputElement.parentElement.querySelector(options.errorSelector);
                     inputElement.innerText = '';
-                    inputElement.parentElement.classList.remove('invalid');
+                    inputElement.parentElement.classList.remove('invalid');;
                 }
             }
         });
