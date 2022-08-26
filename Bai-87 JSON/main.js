@@ -24,4 +24,4 @@ console.log(JSON.stringify([
 console.log(JSON.stringify({
     name: 'Minh bvi',
     age: 6
-}))
+}));
