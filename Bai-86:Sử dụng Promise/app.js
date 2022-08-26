@@ -1,6 +1,6 @@
 var promise = new Promise(
     // Executor
-    function(resolve, reject) {
+    function(resolve, reject) {a
         // Logic
         // Thành công: resolve()
         // Thất bại: reject()
