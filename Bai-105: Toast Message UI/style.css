@@ -13,7 +13,7 @@
     padding: 20px 0;
     min-width: 400px;
     max-width: 450px;
-    border-radius: 4px solid;
+    border-radius: 4px solid;;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
     animation: slideInLeft ease .3s, fadeOut linear 1s 3s forwards;
 }
