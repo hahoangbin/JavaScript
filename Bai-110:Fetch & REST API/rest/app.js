@@ -5,6 +5,11 @@
 //    - Update: Chỉnh sửa -> PUT / PATCH
 //    - Delete: Xoá -> DELETE
 // - Postman
+var courseApi = 'http://localhost:3000/courses'
+function start(){
+    getCourses(renderCourses)
+    handleCreateForm()
+}
 
 function start() {
     getCourses(renderCourses);
@@ -38,14 +43,34 @@ function createCourse(data, callback) {
         .then(callback);
 }
 
-function renderCourses(courss) {
+function handleDeleteCoourse(id) {
+    var options = {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    };
+    fetch(courseApi + '/' + id, options)
+        .then(function(response) {
+            response.json();
+        })
+        .then(function() {
+            var courseItem = document.querySelector('.course-item-' + id);
+            if(courseItem) {
+                courseItem.remove();
+            }
+        });
+}
+
+function renderCourses(courses) {
     var listCoursesBlock = 
         document.querySelector('#list-courses');
     var htmls = courses.map(function(course) {
         return `
-            <li>
+            <li class="course-item-${course.id}">
                 <h4>${course.name}</h4>
                 <p>${course.description}</p>
+                <button onclick="handleDeleteCoourse(${course.id})">&times;</button>
             </li>
         `;
     });
@@ -64,6 +89,8 @@ function handleCreateForm() {
             description: description
         };
 
-        createCourse(formData);
+        createCourse(formData, function() {
+            getCourses(renderCourses);
+        });
     }
 }
