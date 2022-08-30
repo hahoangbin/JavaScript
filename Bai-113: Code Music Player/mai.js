@@ -111,7 +111,7 @@ const progress = $('#progress')
               cd.style.width = newcdWidht > 0?newcdWidht + 'px':0
               cd.style.opacity = newcdWidht / cdWidth
           }
-          // xử lý khi click play
+          // xử lý khi click playy
           playBtn.onclick = function(){
               if(_this.isPlaying){
                   audio.pause()
