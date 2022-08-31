@@ -143,6 +143,20 @@
     border-radius: 5px;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
   }
+
+  .song.active {
+    background-color: var(--primary-color);
+  }
+
+  .song:active {
+    opacity: 0.8;
+  }
+
+  .song.active .option,
+  .song.active .author,
+  .song.active .title {
+    color: #fff;
+  }
   
   .song.active {
     background-color: var(--primary-color);
