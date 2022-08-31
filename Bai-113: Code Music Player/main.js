@@ -1,19 +1,6 @@
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
- /**
-* 1. Render songs
-* 2. Sroll top
-* 3. Play / pause / seek
-* 4. CD rotate
-* 5. Next / Prev
-* 6. Random
-* 7. Next / Repeat When ended
-* 8. Active song
-* 9. Scroll active song into view
-* 10. Play song when click
-*/
-
 const PLAYER_STORAGE_KEY = 'F8_PLAYER'
 
 const player = $('.player')
@@ -34,61 +21,56 @@ const app ={
     isPlaying: false,
     isRandom: false,
     isRepeat: false,
-    config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY))||{},
     songs: [
         {
             name: 'Em Ơi Đừng Khóc',
             singer: 'ThaiHoang',
-            path: './assets/music/emoi.mp4',
-            image: './assets/img/thaihoang1.jpeg'
+            path: './assets/music/song5.mp4',
+            image: './assets/img/song1.jpeg'
         },
         {
             name: 'Cố Độc Vương',
             singer: 'Trieumuzik',
-            path: './assets/music/muzik.mp4',
-            image: './assets/img/muzik.1.jpeg'
+            path: './assets/music/song3.mp4',
+            image: './assets/img/song2.jpeg'
         },
         {
             name: 'Vẫn nhớ',
             singer: 'Tilo',
-            path: './assets/music/ppp.mp4',
-            image: './assets/img/tilo.1.jpeg'
+            path: './assets/music/song4.mp4',
+            image: './assets/img/song3.jpeg'
         },
         {
-            name: 'Pháo Hồng',
+            name: 'Người Lạ Thoáng Qua',
             singer: 'Tirik',
-            path: './assets/music/ppp.mp4',
-            image: './assets/img/tilo2.jpeg'
+            path: './assets/music/song1.mp4',
+            image: './assets/img/song4.jpeg'
         },
         {
-            name: 'EDM remix',
+            name: 'Thế Lương',
             singer: 'trangmon',
-            path: './assets/music/ppp.mp4',
-            image: './assets/img/uu.png'
+            path: './assets/music/song2.mp4',
+            image: './assets/img/song5.jpeg'
         },
         {
             name: 'Bình minh ơi ',
             singer: 'Juka',
-            path: './assets/music/ppp.mp4',
-            image: './assets/img/yy.jpeg'
+            path: './assets/music/song6.mp4',
+            image: './assets/img/song6.jpeg'
         },
         {
-            name: 'Mạnh mẽ tứ phương',
+            name: 'Duyên duyên số số',
             singer: 'Bach xa',
-            path: './assets/music/ppp.mp4',
-            image: './assets/img/thienchi.jpeg'
+            path: './assets/music/song7.mp4',
+            image: './assets/img/song7.png'
         },  {
-            name: 'Yếu đối trước gương',
+            name: 'Thu cuối',
             singer: 'thien chi',
-            path: './assets/music/ppp.mp4',
-            image: './assets/img/bb.jpeg'
+            path: './assets/music/song8.mp4',
+            image: './assets/img/song8.jpeg'
         }
           
     ],
-    setConfig: function(key, value){
-        this.config[key] = value
-        localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config))
-    },
     render: function(){
         const htmls = this.songs.map((song, index) => {
             return `
@@ -190,13 +172,11 @@ const app ={
         // Xử lý bật / tắt random song
         randomBtn.onclick = function(e){
             _this.isRandom = !_this.isRandom
-            _this.setConfig('isRandom', _this.isRandom)
            randomBtn.classList.toggle('active',_this.isRandom)
         }
         // Xử lý lặp lại một song
         repeatBtn.onclick = function(e){
             _this.isRepeat = !_this.isRepeat
-            _this.setConfig('isRepeat', _this.isRepeat)
             repeatBtn.classList.toggle('active',_this.isRepeat)
         }
         // Xử lý next song khi audio ended
@@ -218,7 +198,7 @@ const app ={
                 _this.render()
                 audio.play()
             }
-            // Xử lý khi click vào song option
+            // click vào option
             if(e.target.closest('.option')){
 
             }
@@ -266,8 +246,6 @@ const app ={
         this.loadCurrentSong()
     },
     start: function(){
-        // Gán cấu hình từ config vào ứng dụng 
-        this.loadConfig()
 
         // Định nghĩa các thuộc tính cho object
         this.defineProperties()
