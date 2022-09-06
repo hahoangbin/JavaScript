@@ -63,12 +63,25 @@ const app ={
             singer: 'Bach xa',
             path: './assets/music/song7.mp4',
             image: './assets/img/song7.png'
-        },  {
+        },  
+        {
             name: 'Thu cuối',
             singer: 'thien chi',
             path: './assets/music/song8.mp4',
             image: './assets/img/song8.jpeg'
-        }
+        },
+        {
+            name: 'Hiện Đại',
+            singer: 'Khac Viet',
+            path: './assets/music/song9.mp4',
+            image: './assets/img/song9.jpeg'
+        },
+        {
+            name: 'Anh Yêu em',
+            singer: '3 chu bo doi',
+            path: './assets/music/song10.mp4',
+            image: './assets/img/song10.jpeg'
+        },
           
     ],
     render: function(){
