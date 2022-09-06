@@ -82,6 +82,18 @@ const app ={
             path: './assets/music/song10.mp4',
             image: './assets/img/song10.jpeg'
         },
+        {
+            name: 'Sóng gió',
+            singer: 'Jack',
+            path: './assets/music/song12.mp4',
+            image: './assets/img/song12.jpeg'
+        },
+        {
+            name: 'Anh Yêu em',
+            singer: '3 chu bo doi',
+            path: './assets/music/song12.mp4',
+            image: './assets/img/song13.jpeg'
+        },
           
     ],
     render: function(){
