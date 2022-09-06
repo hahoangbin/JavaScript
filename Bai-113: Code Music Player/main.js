@@ -89,8 +89,8 @@ const app ={
             image: './assets/img/song12.jpeg'
         },
         {
-            name: 'Anh Yêu em',
-            singer: '3 chu bo doi',
+            name: 'Bạc phận ',
+            singer: 'Jack',
             path: './assets/music/song12.mp4',
             image: './assets/img/song13.jpeg'
         },
